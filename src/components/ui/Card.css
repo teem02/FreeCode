@@ -1,0 +1,46 @@
+/* Card Styles - Lovable UI Component */
+.card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.card--hover:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.card__header {
+  padding: var(--spacing-6);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.card__body {
+  padding: var(--spacing-6);
+}
+
+.card__footer {
+  padding: var(--spacing-6);
+  border-top: 1px solid var(--color-gray-200);
+  background-color: var(--color-gray-100);
+}
+
+/* Compact card variant */
+.card--compact .card__header,
+.card--compact .card__body,
+.card--compact .card__footer {
+  padding: var(--spacing-4);
+}
+
+/* Full height card */
+.card--full-height {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card--full-height .card__body {
+  flex: 1;
+}
