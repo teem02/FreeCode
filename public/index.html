@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeCode - AI-Powered Coding Platform</title>
+    <meta name="description" content="Free AI-powered coding platform that helps developers write, debug, and learn code more efficiently">
+    <meta name="keywords" content="AI, coding, programming, assistant, code generation, developer tools">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>🚀 FreeCode</h1>
+                <span class="tagline">AI-Powered Coding Platform</span>
+            </div>
+            <nav class="nav">
+                <a href="#features">Features</a>
+                <a href="#demo">Demo</a>
+                <a href="#about">About</a>
+                <a href="https://github.com/teem02/FreeCode" target="_blank">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Code Smarter with AI</h2>
+                    <p>Generate, explain, and debug code using the power of artificial intelligence. Free and open-source.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" id="try-now-btn">Try It Now</button>
+                        <a href="https://github.com/teem02/FreeCode" class="btn btn-secondary" target="_blank">View on GitHub</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="code-preview">
+                        <div class="code-header">
+                            <span class="dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                            <span class="title">AI Code Generator</span>
+                        </div>
+                        <pre><code class="language-javascript">// Ask AI: "Create a function to sort an array"
+function sortArray(arr) {
+    return arr.slice().sort((a, b) => a - b);
+}
+
+const numbers = [64, 34, 25, 12, 22];
+console.log(sortArray(numbers));
+// Output: [12, 22, 25, 34, 64]</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Powerful Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <h3>AI Code Generation</h3>
+                        <p>Describe what you want in plain English and get working code instantly</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3>Code Explanation</h3>
+                        <p>Understand complex code with detailed AI-powered explanations</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛠️</div>
+                        <h3>Multi-Language Support</h3>
+                        <p>Support for JavaScript, Python, Java, C++, and more languages</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎓</div>
+                        <h3>Learn as You Code</h3>
+                        <p>Get educational insights and best practices with every generation</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Fast & Efficient</h3>
+                        <p>Lightning-fast responses to boost your coding productivity</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🆓</div>
+                        <h3>Completely Free</h3>
+                        <p>Open-source platform with no hidden costs or limitations</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Section -->
+        <section id="demo" class="demo">
+            <div class="container">
+                <h2>Try FreeCode AI</h2>
+                <div class="demo-container">
+                    <div class="input-section">
+                        <div class="form-group">
+                            <label for="language-select">Programming Language:</label>
+                            <select id="language-select" class="form-control">
+                                <option value="javascript">JavaScript</option>
+                                <option value="python">Python</option>
+                                <option value="java">Java</option>
+                                <option value="cpp">C++</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="prompt-input">Describe what you want to code:</label>
+                            <textarea id="prompt-input" class="form-control" 
+                                    placeholder="Example: Create a function that sorts an array of numbers in ascending order"
+                                    rows="3"></textarea>
+                        </div>
+                        
+                        <button id="generate-btn" class="btn btn-primary">
+                            <span id="btn-text">Generate Code</span>
+                            <span id="btn-loading" class="loading" style="display: none;">Generating...</span>
+                        </button>
+                    </div>
+                    
+                    <div class="output-section">
+                        <div class="tabs">
+                            <button class="tab-btn active" data-tab="code">Generated Code</button>
+                            <button class="tab-btn" data-tab="explanation">Explanation</button>
+                        </div>
+                        
+                        <div id="code-tab" class="tab-content active">
+                            <div class="code-output">
+                                <div class="code-header">
+                                    <span class="language-tag" id="output-language">JavaScript</span>
+                                    <button class="copy-btn" id="copy-code-btn">Copy</button>
+                                </div>
+                                <pre id="generated-code"><code class="language-javascript">// Your generated code will appear here
+// Try describing what you want to code in the input above!</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div id="explanation-tab" class="tab-content">
+                            <div class="explanation-content">
+                                <div id="code-explanation">
+                                    <p>AI explanation will appear here after code generation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>About FreeCode</h2>
+                        <p>FreeCode is an open-source AI-powered coding platform designed to make programming more accessible and efficient for developers of all skill levels.</p>
+                        
+                        <h3>Our Mission</h3>
+                        <p>To democratize coding education and productivity by providing free AI-assisted development tools that help everyone learn and code better.</p>
+                        
+                        <h3>Why Choose FreeCode?</h3>
+                        <ul>
+                            <li>✅ <strong>Completely Free:</strong> No subscription fees or hidden costs</li>
+                            <li>✅ <strong>Open Source:</strong> Transparent, community-driven development</li>
+                            <li>✅ <strong>Privacy-Focused:</strong> Your code stays secure and private</li>
+                            <li>✅ <strong>Educational:</strong> Learn best practices and coding patterns</li>
+                            <li>✅ <strong>Multi-Language:</strong> Support for popular programming languages</li>
+                        </ul>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Free & Open Source</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Programming Languages</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">∞</div>
+                            <div class="stat-label">Code Generations</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🚀 FreeCode</h3>
+                    <p>AI-powered coding for everyone</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#demo">Demo</a></li>
+                        <li><a href="https://github.com/teem02/FreeCode">GitHub</a></li>
+                        <li><a href="https://github.com/teem02/FreeCode/issues">Report Bug</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://github.com/teem02/FreeCode/discussions">Discussions</a></li>
+                        <li><a href="https://github.com/teem02/FreeCode/blob/main/CONTRIBUTING.md">Contribute</a></li>
+                        <li><a href="https://github.com/teem02/FreeCode/blob/main/LICENSE">License</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FreeCode. Licensed under MIT License. Built with ❤️ by the community.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
